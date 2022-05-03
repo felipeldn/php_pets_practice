@@ -1,5 +1,37 @@
 <?php require 'layout/header.php';?>
 
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    if (isset($_POST['name'])) {
+        $name = $_POST['name'];
+    } else {
+        $name = '';
+    }
+
+    if (isset($_POST['breed'])) {
+        $breed = $_POST['breed'];
+    } else {
+        $breed = '';
+    }
+
+    if (isset($_POST['weight'])) {
+        $weight = $_POST['weight'];
+    } else {
+        $weight = '';
+    }
+
+    if (isset($_POST['bio'])) {
+        $bio = $_POST['bio'];
+    } else {
+        $bio = '';
+    }
+}
+
+var_dump($name, $breed, $weight, $bio);
+?>
+
 <div class="container">
     <div class="row">
         <div class="col-xs-6">
