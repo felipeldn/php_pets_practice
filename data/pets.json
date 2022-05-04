@@ -29,5 +29,21 @@
         "bio": "Treats and Snoozin!",
         "image": "pancake.png",
         "breed": "Bulldog"
+    },
+    {
+        "name": "Tobi",
+        "breed": "Cockerspaniel",
+        "weight": "20",
+        "bio": "Cute pet",
+        "age": "",
+        "image": ""
+    },
+    {
+        "name": "Rascal",
+        "breed": "Lab",
+        "weight": "20",
+        "bio": "Cute lab!",
+        "age": "",
+        "image": ""
     }
 ]
