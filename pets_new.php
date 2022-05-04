@@ -46,7 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     save_pets($pets);
 
     header('Location: /');
-    die;
 }
 ?>
 
