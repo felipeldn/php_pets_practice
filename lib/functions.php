@@ -8,8 +8,7 @@ function get_pets()
     return $pets;
 }
 
-function save_pets($petsToSave)
-{
+function save_pets($petsToSave) {
     $json = json_encode($petsToSave, JSON_PRETTY_PRINT);
     file_put_contents('data/pets.json', $json);
-}
+};

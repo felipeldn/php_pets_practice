@@ -45,5 +45,29 @@
         "bio": "Cute lab!",
         "age": "",
         "image": ""
+    },
+    {
+        "name": "Test Pup",
+        "breed": "Lab",
+        "weight": "30",
+        "bio": "",
+        "age": "",
+        "image": ""
+    },
+    {
+        "name": "Test two",
+        "breed": "Lab",
+        "weight": "40",
+        "bio": "",
+        "age": "",
+        "image": ""
+    },
+    {
+        "name": "Pup",
+        "breed": "Lab",
+        "weight": "50",
+        "bio": "",
+        "age": "",
+        "image": ""
     }
 ]
