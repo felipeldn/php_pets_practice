@@ -8,14 +8,25 @@ function get_connection() {
         $config['database_user'],
         $config['database_pass']
     );
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    return $pdo;
 };
 
-function get_pets()
+function get_pets($limit = null)
 {
     $pdo = get_connection();
 
-    $result = $pdo->query('SELECT * FROM pet LIMIT 3');
-    $pets = $result->fetchAll();
+    $query = 'SELECT * FROM pet';
+    if ($limit) {
+        $query = $query .' LIMIT :resultLimit';
+    }
+    $stmt = $pdo->prepare($query);
+    if ($limit) {
+        $stmt->bindParam('resultLimit', $limit, PDO::PARAM_INT);
+    }
+    $stmt->execute();
+    $pets = $stmt->fetchAll();
 
     return $pets;
 }
@@ -23,10 +34,13 @@ function get_pets()
 function get_pet($id)
 {
     $pdo = get_connection();
-    $query = 'SELECT * FROM pet WHERE id = '.$id;
-    $result = $pdo->query($query);
 
-    return $result->fetch();
+    $query = 'SELECT * FROM pet WHERE ID = :idVal';
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam('idVal', $id);
+    $stmt->execute();
+
+    return $stmt->fetch();
 }
 
 function save_pets($petsToSave) {
